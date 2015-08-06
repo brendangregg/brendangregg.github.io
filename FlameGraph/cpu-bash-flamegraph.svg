@@ -24,6 +24,14 @@
 	function s(info) { details.nodeValue = "Function: " + info; }
 	function c() { details.nodeValue = ' '; }
 
+	// ctrl-F for search
+	window.addEventListener("keydown",function (e) {
+		if (e.keyCode === 114 || (e.ctrlKey && e.keyCode === 70)) { 
+			e.preventDefault();
+			search_prompt();
+		}
+	})
+
 	// functions
 	function find_child(parent, name, attr) {
 		var children = parent.childNodes;
